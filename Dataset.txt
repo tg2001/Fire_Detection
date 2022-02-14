@@ -1,0 +1,31 @@
+ABOUT THE DATASET:
+
+The dataset used to create this model is available in kaggle in the following link:
+https://www.kaggle.com/atulyakumar98/test-dataset
+
+This is the best I could get in the internet, as per my requirement. This dataset contains fire images in many different places, which is suitable for my model.
+Someone can easily catch that the dataset is full of images taken from the internet (specially the non-fire ones, as they seem to be too perfect!).Obviously, it doesn't matter to the model.
+
+So, is this dataset excellent (may be in a scale of 1 to 10)? 
+Answer: I would probably give this dataset a 6 out of 10. Why?
+
+The reasons are below:
+
+1. There is a huge difference in the number of images in fire and non-fire dataset. Non-fire has approx 5 times more images than the fire one, which is not appreciated.
+
+2. The number of images is too low (like there are just 110 images in the fire dataset). I tried to make up for this problem by applying different types of image transformation (like rotation, translation, flipping, etc) to multiply the number of images, and bring variations to the images at the same time. This increased the number of images by approx 20 times!
+
+3. The most of the fire images in the dataset that are clicked close to the camera. In these images, the fire covers about atleast 20 percent of the image. This is a problem because the model may learn that an 'object' is to be labelled as 'fire' if it covers atleast 20 percent of the image, apart from its other characteristics. This is a problem for fire images which cover only about 5 percent of the image (may be because the fire source is small, like a lighter, or the fire source is far from the camera)
+
+4. The problem with a model like fire detection, which is probably not there in other models like car detection, face detection, etc is that fire has no definite shape. It changes depending on the source, the area it is spread over, availability of oxygen, etc. It only has a characteristic yellowish-orange colour. So to make the model more accurate and robust, we actually need more images of object that are yellow, but not fire, like yellow car, yellow house/wall, man wearing a yellow dress, etc. 
+
+Despite all these major drawbacks, I had to go with this because its not possible to collect dataset of the type I want. This may be the reason why people say that data collection and cleaning takes up most of the time involved in creating a model.
+
+Links to some other datasets are:
+
+https://www.kaggle.com/phylake1337/fire-dataset
+https://www.kaggle.com/mohnishsaiprasad/forest-fire-images
+https://www.kaggle.com/kutaykutlu/forest-fire?select=train_fire
+
+The above two datasets are quite good, but they only contain images of forests and forest fires and I wanted my model to be a general one, that can identify fire at any place
+The third link is too large (3GB size), moreover, it contains many repeated images, which will require someone to spend some time in removing the duplicates.
